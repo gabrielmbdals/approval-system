@@ -1,4 +1,4 @@
-package br.com.gmbconsulting.approvalsystem.domain;
+package br.com.gmbconsulting.approvalsystem.domain.user;
 
 public enum UserType {
 

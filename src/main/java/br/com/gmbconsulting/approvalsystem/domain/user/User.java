@@ -1,9 +1,13 @@
-package br.com.gmbconsulting.approvalsystem.domain;
+package br.com.gmbconsulting.approvalsystem.domain.user;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +19,8 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "user")
 public class User {
@@ -23,13 +29,13 @@ public class User {
     private String email;
     private String name;
     private String password;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "type_user")
     private UserType type;
-
-    @CreationTimestamp
+    @CreatedDate
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dtCreated;
-    @UpdateTimestamp
+    @LastModifiedDate
+    @Column(columnDefinition = "TIMESTAMP")
     private LocalDateTime dtUpdate;
 }

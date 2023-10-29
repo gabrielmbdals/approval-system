@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    user: root
+    password: senha_root
+    url: jdbc:mysql://localhost:3308/db_approval
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
+      ddl-auto: update
+
+
+message:
+  definition:
+    user_already_registered: "Usuário já está cadastrado!"
